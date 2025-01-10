@@ -31,8 +31,12 @@
 - Clustering: Cells with similar accessibility profiles can be organized into clusters. hierarchical, k-means, k-medoids, and Louvain algorithm.
 ## Downstream analysis
 ### Cell identity annotation
-- Approaches to cell identity annotation; 1. feature annotation of ATAC peaks , and 2. utilizes integration with reference scRNA-seq data.
-- 
+- Approaches to cell identity annotation; 1. feature annotation of ATAC peaks (databases of cell type specific genomic features, such as TF motifs, enhancers, promoters, and TSSs), and 2. utilizes integration with reference scRNA-seq data.
+- ‘Gene activity scores’ weigh co-accessible elements to a gene’s promoter region differently to infer gene expression from chromatin accessibility profiles more accurately.
+- Gene expression matrix from scRNA-seq data can be integrated with gene activity score matrix from scATAC-seq data for the same cell types. Mutual nearest neighbors (MNN) algorithm is used to transfer cell-labels from the scRNA-seq data to the scATAC-seq data.
+### Differential accesibility regions analysis
+- Stats: binomial test, negative binomial generalized linear model, a Wald test, Fisher’s exact test, unequal variances t-test, and information gain along with 1% or 5% false discovery rate (FDR) adjustment with Benjamini-Hochberg or Bonferroni correction.
+- Pseudotime analysis: Cicero (similar to Monocle2)
 ## Reviews, methods and other interesting reads
 - Accelerating single-cell genomic analysis with GPUs. [Nolet et al, 2022](https://www.biorxiv.org/content/10.1101/2022.05.26.493607v1) [Github](https://github.com/NVIDIA-Genomics-Research/rapids-single-cell-examples)
 - An open-source interactive pipeline tutorial for differential ATAC-seq footprint analysis - Google cloud. [Github](https://github.com/NIGMS/ATAC-Seq-and-Single-Cell-ATAC-Seq-Analysis/tree/main)
